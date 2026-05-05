@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: firt-dep
+  name: firt-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: firt-dep
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: firt-dep
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources: {}
+status: {}
