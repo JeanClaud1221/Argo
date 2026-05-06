@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: netshoot
-  namespace: argocd
+  namespace: netshoot
   labels:
     notify-regression: "true"
 spec:
@@ -14,5 +14,7 @@ spec:
     path: netshoot
     targetRevision: HEAD
   syncPolicy:
+    syncOptions:
+     - CreateNamespace=true
     automated:
       prune: true
