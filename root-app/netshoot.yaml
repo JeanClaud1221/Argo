@@ -9,14 +9,10 @@ spec:
   destination:
     server: https://kubernetes.default.svc/
   project: default
-  source:
+  source: 
     repoURL: git@github.com:JeanClaud1221/Argo.git
     path: netshoot/
     targetRevision: HEAD
   syncPolicy:
-    syncOptions:
-      - ServerSideApply=true
-
     automated:
       prune: true
-
