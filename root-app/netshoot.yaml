@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: netshoot
+  namespace: argocd
+  labels:
+    notify-regression: "true"
+spec:
+  destination:
+    server: https://kubernetes.default.svc/
+  project: default
+  source:
+    repoURL: git@github.com:JeanClaud1221/Argo.git
+    path: netshoot/
+    targetRevision: HEAD
+  syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
+
+    automated:
+      prune: true
+
