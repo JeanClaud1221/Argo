@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-gateway
+  namespace: argocd
+  labels:
+    notify-regression: "true"
+spec:
+  destination:
+    server: https://kubernetes.default.svc/
+  project: default
+  source: 
+    repoURL: git@github.com:JeanClaud1221/Argo.git
+    path: gateway-api/
+    targetRevision: v1
+  syncPolicy:
+    automated:
+      prune: true
