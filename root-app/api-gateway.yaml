@@ -12,7 +12,6 @@ spec:
   source: 
     repoURL: git@github.com:JeanClaud1221/Argo.git
     path: gateway-api/
-    targetRevision: test
   syncPolicy:
     automated:
       prune: true
