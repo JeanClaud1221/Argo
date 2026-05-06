@@ -11,7 +11,7 @@ spec:
   project: default
   source: 
     repoURL: git@github.com:JeanClaud1221/Argo.git
-    path: netshoot/
+    path: netshoot
     targetRevision: HEAD
   syncPolicy:
     automated:
