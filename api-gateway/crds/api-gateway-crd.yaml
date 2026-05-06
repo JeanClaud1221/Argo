@@ -10,7 +10,6 @@ spec:
   source:
     repoURL: https://kubernetes-sigs.github.io/gateway-api
     chart: gateway-api
-    targetRevision: 1.0.0
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
