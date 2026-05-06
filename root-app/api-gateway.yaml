@@ -14,5 +14,8 @@ spec:
     path: gateway-api/
     targetRevision: HEAD
   syncPolicy:
+    syncOptions:
+      - ServerSideApply=true
+
     automated:
       prune: true
