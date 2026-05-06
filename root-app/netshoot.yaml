@@ -2,19 +2,19 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: netshoot
-  namespace: netshoot
-  labels:
-    notify-regression: "true"
+  namespace: argocd # Change this to 'argocd' or wherever your Argo controller is running
 spec:
   destination:
-    server: https://kubernetes.default.svc/
+    server: https://kubernetes.default.svc
+    namespace: kube-system # MUST match the manifest namespace
   project: default
   source: 
     repoURL: git@github.com:JeanClaud1221/Argo.git
     path: netshoot
     targetRevision: HEAD
   syncPolicy:
-    syncOptions:
-     - CreateNamespace=true
     automated:
       prune: true
+      selfHeal: true
+    syncOptions:
+    - CreateNamespace=true
